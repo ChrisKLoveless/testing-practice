@@ -1,34 +1,67 @@
-const coinCounter = (price) => {
+Closure
+--------------------------------
 
-  let output = ["quarters": 0, "dimes" = 0, "nickels" = 0, "pennies" = 0];
-  let remainder = 0;
+const getChange = (coin) => {
+  return (price) => {
+    return (price / coin);
+  }
+}
+
+const quarters = getChange(.25);
+const dimes = getChange(.1);
+const nickels = getChange(.05);
+const pennies = getChange(.01);
+
+quarters(1.25);
+
+---------------------------------
+Recursion 1
+
+  let output = ["quarters"= 0, "dimes" = 0, "nickels" = 0, "pennies" = 0];
+
+const coinCounter = (price) => {
 
   if(price === Nan || price === 0) {
     return price;
   }
 
-  if(price % .25 === 0) {
-    remainder = ()
-    const q = quarters(price);
-    output.quarters = q;
+  if(price >= .25) {
+    price -= .25;
+    quarters ++;
+    return coinCounter(price);
   }
-  else if(price % .10) {
-    const d = dimes(price);
-    output.dimes = d;
+  else if(price >= .10) {
+    price -= .10;
+    dimes ++;
+    coinCounter(price);
   }
-  else if(price % .05) {
-    const n  = nickels(price);
-    output.nickels = n;
+  else if(price >= .05) {
+    price -= .05;
+    nickels ++
+    coinCounter(price);
   }
-  else if(price % .01) {
-    const p = pennies(price);
-    output.pennies = p;
+  else if(price >= .01) {
+    price -= .10;
+    pennies ++;
+    coinCounter(price);
   }
   else {
     return output;
   }
 }
+Console.Log(output)
 
-return coinCounter(remainder);
+-------------------------------------
+Recursion 2
 
-return coinCounter(remainder25(price))
+let remainder = 0;
+let 
+
+const changeMaker = (price) => {
+  if (isNaN(price)) {
+    return;
+  }
+  if (price >= .25) {
+    
+  }
+} 

@@ -14,6 +14,8 @@ const coinOperations = {
   pennies: function (price) {
     return Math.floor(price / .01);
   }
+
+  
 };
 
 module.exports = coinOperations;
